@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tanay's Portfolio</title>
+    <link rel="canonical" href="https://caactiii.github.io" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="icon" href="assets/texture/sharingan.png">
+  </head>
+  <body>
+    <div id="EnterView">
+      <div class="_t1">Tanay Prabhakar</div>
+      <div class="_t2">Portfolio</div>
+    </div>
+    <div id="Page">
+      <div id="Background"><canvas></canvas></div>
+      <div class="mask" id="Mask">
+        <div class="mask_top"></div>
+        <div class="mask_bottom"></div>
+      </div>
+      <div class="frame" id="Frame">
+        <div class="frame_line frame_line-left"></div>
+        <div class="frame_line frame_line-right"></div>
+        <div class="frame_line frame_line-top"></div>
+        <div class="frame_line frame_line-bottom"></div>
+      </div>
+      <div class="theme" id="Theme" x-data>
+        <div class="theme_colors" @click="$store.app.toggleTheme()">
+          <div
+            class="theme_btn"
+            :class="{ 'is-selected': $store.app.theme === 'light' }"
+          >
+            <div class="_box"></div>
+            <div class="_text">Light</div>
+          </div>
+          <div
+            class="theme_btn"
+            :class="{ 'is-selected': $store.app.theme === 'dark' }"
+          >
+            <div class="_box"></div>
+            <div class="_text">Dark</div>
+          </div>
+        </div>
+        <div
+          class="theme_btn"
+          :class="{ 'is-selected': $store.app.fontStyle === 'mono' }"
+          @click="$store.app.toggleFontStyle()"
+        >
+          <div class="_box"></div>
+          <div class="_text">Monospaced</div>
+        </div>
+      </div>
+      <header class="siteHeader" id="SiteHeader">
+        <h1 class="siteHeader_title">Tanay Prabhakar</h1>
+        <p class="siteHeader_label" style="margin-left: 4px;">Computer Science Engineer</p>
+        <nav class="siteHeader_nav" x-data>
+          <ol>
+            <li :class="{ 'is-selected': $store.app.currentPath === '/' }">
+              <div class="_dot">&#x25cf;</div>
+              <a class="_text" href="/">Home</a>
+            </li>
+            <li
+              :class="{ 'is-selected': $store.app.currentPath === '/projects/' }"
+            >
+              <div class="_dot">&#x25cf;</div>
+              <a class="_text" href="/projects/">Projects</a>
+            </li>
+            <li :class="{ 'is-selected': $store.app.currentPath === '/info/' }">
+              <div class="_dot">&#x25cf;</div>
+              <a class="_text" href="/info/">Info</a>
+            </li>
+            <li
+              :class="{ 'is-selected': $store.app.currentPath === '/contact/' }"
+            >
+              <div class="_dot">&#x25cf;</div>
+              <a class="_text" href="/contact/">Contact</a>
+            </li>
+          </ol>
+        </nav>
+      </header>
+      <main class="content" id="Content" data-scroll="area">
+        <div class="content_inner" data-scroll="target">
+          <section class="page" data-page="home">
+            <div class="page_content home">
+              <p class="home_aboutme">
+                <span>Caffeine-fueled code</span><span>explorer, with a</span
+                ><span>thirst for knowledge</span><span>that spans</span
+                ><span>algorithms and</span><span>armchair psychology.</span
+                ><span>Every journey,</span><span>near or far,</span
+                ><span>fuels the next line</span><span>of code and</span
+                ><span>the next chapter</span><span>of my</span
+                ><span>ever-evolving</span><span>mind. </span>
+              </p>
+            </div>
+          </section>
+          <section class="page" data-page="projects">
+            <div class="page_content project">
+              <div class="project_section">
+                <h2 class="project_heading">
+                  &#x25a0; Projects
+                </h2>
+                <div class="project_list">
+                  <a
+                    class="project_item text-btn"
+                    href="https://caactiii.github.io/youtubeclone/"
+                    target="_blank"
+                    ><div class="project_title">YT Clone</div>
+                    <div class="project_info">
+                      Made Using HTML CSS
+                    </div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="page" data-page="info">
+            <div class="page_content info">
+              <div class="info_item info_item-1">
+                <div class="info_content">
+                  <ul>
+                    <li>
+                      <a
+                        class="text-btn"
+                        href="https://twitter.com/TanayPrabhakar_"
+                        target="_blank"
+                        rel="noopener"
+                        >Twitter ↗</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="text-btn"
+                        href="https://www.instagram.com/tanayprabhakar/"
+                        target="_blank"
+                        rel="noopener"
+                        >Instagram ↗</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="text-btn"
+                        href="https://www.github.com/caactiii/"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub ↗</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="text-btn"
+                        href="https://www.linkedin.com/in/tanayprabhakar/"
+                        target="_blank"
+                        rel="noopener"
+                        >LinkedIn ↗</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="info_item info_item-3">
+                <div class="info_content">
+                  <ul>
+                    <li>
+                      <span class="is-light"
+                        >Freshman at UPES<br /></span
+                      ><span>B.Tech(H) in CSE</span>
+                    </li>
+                    <li>
+                      <span class="is-light"
+                        >UPES-ACM/ACM-W<br /></span
+                      ><span>Technical Core</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="page" data-page="contact">
+            <div class="page_content contact">
+              <div class="contact_wrap">
+                <a
+                  class="contact_text en text-btn"
+                  href="mailto:tanayprabhakar10@gmail.com"
+                  target="_blank"
+                  rel="noopener"
+                  >e-mail: tanayprabhakar10@gmail.com</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
