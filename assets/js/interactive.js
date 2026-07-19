@@ -30,25 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  // Mobile Gyroscope 3D Tilt
-  if (window.DeviceOrientationEvent) {
-    window.addEventListener("deviceorientation", (e) => {
-      const cards = document.querySelectorAll(".page_content");
-      
-      // gamma is left-to-right, beta is front-to-back
-      let rotateY = (e.gamma || 0) / 2; 
-      let rotateX = ((e.beta || 0) - 45) / 2; // Offset for normal viewing angle
-      
-      // Clamp rotations
-      rotateY = Math.max(-15, Math.min(15, rotateY));
-      rotateX = Math.max(-15, Math.min(15, rotateX));
-
-      cards.forEach(card => {
-        card.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
-      });
-    });
-  }
-  
   // Smooth trail animation
   const animateTrail = () => {
     trailX += (mouseX - trailX) * 0.15;
