@@ -609,18 +609,37 @@ a, .theme_btn {
     box-shadow: 0 8px 32px color-mix(in srgb, var(--c-text) 10%, transparent), 0 0 15px color-mix(in srgb, var(--c-text) 5%, transparent) inset !important;
   }
 
-  /* Adjust Header */
+  /* Adjust Header - iOS Style Top Nav */
+  .siteHeader {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    padding: 20px calc(var(--pad) * 2) 15px !important;
+    background: color-mix(in srgb, var(--c-bg) 40%, transparent) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--c-text) 10%, transparent) !important;
+    mix-blend-mode: normal !important;
+    color: var(--c-text) !important;
+  }
   .siteHeader_title {
-    font-size: 28px !important;
+    font-size: 24px !important;
+    text-shadow: none !important;
   }
   .siteHeader_label {
-    font-size: 13px !important;
+    display: none !important;
   }
   .siteHeader_nav {
-    margin-top: 25px !important;
+    margin-top: 15px !important;
   }
   .siteHeader_nav ol {
-    row-gap: 12px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    row-gap: 0 !important;
+  }
+  .siteHeader_nav ol li ._dot {
+    left: -12px !important;
+    top: 2px !important;
   }
 
   /* Adjust Theme Toggle */
@@ -641,7 +660,7 @@ a, .theme_btn {
     right: auto !important;
     bottom: auto !important;
     left: calc(var(--pad) * 2) !important;
-    top: 380px !important;
+    top: 140px !important;
     white-space: normal !important;
     width: calc(100% - var(--pad) * 4);
   }
@@ -659,7 +678,7 @@ a, .theme_btn {
 
   /* Projects Page Adjustments */
   .project {
-    padding: 380px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
+    padding: 140px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
     text-align: left !important;
     white-space: normal !important;
   }
@@ -693,7 +712,7 @@ a, .theme_btn {
 
   /* Info Page Adjustments */
   .info {
-    padding: 380px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
+    padding: 140px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
     justify-content: flex-start !important;
   }
   .info_grid {
@@ -713,7 +732,7 @@ a, .theme_btn {
     right: auto !important;
     bottom: auto !important;
     left: calc(var(--pad) * 2) !important;
-    top: 380px !important;
+    top: 140px !important;
     white-space: normal !important;
     width: calc(100% - var(--pad) * 4);
   }
