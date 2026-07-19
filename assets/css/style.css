@@ -603,10 +603,12 @@ a, .theme_btn {
   body, a, .theme_btn {
     cursor: auto !important;
   }
-  .home_aboutme:hover, .project_item:hover, .info_item:hover, .contact_wrap:hover {
-    transform: translateZ(0) !important;
-    border-color: color-mix(in srgb, var(--c-text) 15%, transparent) !important;
-    box-shadow: 0 8px 32px color-mix(in srgb, var(--c-text) 10%, transparent), 0 0 15px color-mix(in srgb, var(--c-text) 5%, transparent) inset !important;
+  .home_aboutme:hover, .project_item:hover, .info_item:hover, .contact_wrap:hover,
+  .home_aboutme:active, .project_item:active, .info_item:active, .contact_wrap:active {
+    background: color-mix(in srgb, var(--c-bg) 30%, transparent) !important;
+    border-color: color-mix(in srgb, var(--c-text) 25%, transparent) !important;
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--c-text) 15%, transparent), 0 0 30px color-mix(in srgb, var(--c-text) 10%, transparent) inset !important;
+    transform: translateZ(-20px) scale(0.98) !important;
   }
 
   /* Adjust Header - iOS Style Top Nav */
@@ -623,14 +625,19 @@ a, .theme_btn {
     color: var(--c-text) !important;
   }
   .siteHeader_title {
-    font-size: 24px !important;
+    font-size: 22px !important;
     text-shadow: none !important;
+    line-height: 1 !important;
   }
   .siteHeader_label {
-    display: none !important;
+    display: block !important;
+    font-size: 11px !important;
+    opacity: 0.8;
+    margin-top: 4px !important;
+    margin-left: 0 !important;
   }
   .siteHeader_nav {
-    margin-top: 15px !important;
+    margin-top: 12px !important;
   }
   .siteHeader_nav ol {
     flex-direction: row !important;
@@ -668,12 +675,6 @@ a, .theme_btn {
     padding: 20px !important;
     font-size: 15px !important;
     line-height: 1.6 !important;
-  }
-  .home_aboutme span {
-    display: inline !important;
-  }
-  .home_aboutme br {
-    display: none !important;
   }
 
   /* Projects Page Adjustments */
