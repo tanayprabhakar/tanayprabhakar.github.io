@@ -551,14 +551,14 @@ a, .theme_btn {
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 8px 32px color-mix(in srgb, var(--c-text) 10%, transparent), 0 0 15px color-mix(in srgb, var(--c-text) 5%, transparent) inset;
-  transform: translateZ(30px);
+  transform: translateZ(0);
   transition: all 0.3s ease;
 }
 
 .home_aboutme:hover, .project_item:hover, .info_item:hover, .contact_wrap:hover {
   border-color: color-mix(in srgb, var(--c-text) 40%, transparent);
-  box-shadow: 0 8px 32px color-mix(in srgb, var(--c-text) 20%, transparent), 0 0 25px color-mix(in srgb, var(--c-text) 10%, transparent) inset;
-  transform: translateZ(50px) scale(1.02);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--c-text) 20%, transparent), 0 0 30px color-mix(in srgb, var(--c-text) 15%, transparent) inset;
+  transform: translateZ(-20px) scale(0.98);
 }
 
 /* Text Effects */
@@ -603,7 +603,7 @@ a, .theme_btn {
     cursor: auto !important;
   }
   .home_aboutme:hover, .project_item:hover, .info_item:hover, .contact_wrap:hover {
-    transform: translateZ(30px) !important;
+    transform: translateZ(0) !important;
     border-color: color-mix(in srgb, var(--c-text) 15%, transparent) !important;
     box-shadow: 0 8px 32px color-mix(in srgb, var(--c-text) 10%, transparent), 0 0 15px color-mix(in srgb, var(--c-text) 5%, transparent) inset !important;
   }
