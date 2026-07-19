@@ -658,7 +658,7 @@ a, .theme_btn {
 
   /* Projects Page Adjustments */
   .project {
-    padding: 250px calc(var(--pad) * 2) 80px calc(var(--pad) * 2) !important;
+    padding: 250px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
     text-align: left !important;
     white-space: normal !important;
   }
@@ -668,34 +668,42 @@ a, .theme_btn {
   .project_list {
     align-items: flex-start !important;
     margin-top: 20px !important;
+    row-gap: 25px !important;
   }
   .project_item {
-    padding: 20px !important;
+    padding: 25px !important;
     width: 100%;
+    display: flex !important;
     flex-direction: column !important;
+    row-gap: 12px !important;
   }
   .project_title {
-    font-size: 22px !important;
+    font-size: 24px !important;
     text-align: left !important;
     white-space: normal;
+    line-height: 1.3 !important;
   }
   .project_info {
-    font-size: 13px !important;
+    font-size: 14px !important;
     white-space: normal;
-    margin-top: 8px !important;
+    margin-top: 0 !important;
+    line-height: 1.5 !important;
   }
 
   /* Info Page Adjustments */
   .info {
-    padding: 250px calc(var(--pad) * 2) 80px calc(var(--pad) * 2) !important;
+    padding: 250px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
     justify-content: flex-start !important;
   }
   .info_grid {
     max-width: 100% !important;
-    gap: 15px !important;
+    gap: 25px !important;
   }
   .info_item {
-    padding: 20px !important;
+    padding: 25px !important;
+  }
+  .info_content {
+    line-height: 1.6 !important;
   }
 
   /* Contact Page Adjustments */
@@ -712,8 +720,9 @@ a, .theme_btn {
     padding: 20px !important;
   }
   .contact_text {
-    font-size: 14px !important;
+    font-size: 15px !important;
     white-space: normal;
     word-break: break-all;
+    line-height: 1.5 !important;
   }
 }
