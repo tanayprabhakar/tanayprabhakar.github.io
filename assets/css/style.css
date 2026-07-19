@@ -421,20 +421,15 @@ body.is-monospaced {
   }
 }
 .info {
-  position: absolute;
-  left: calc(var(--pad) * 2);
-  bottom: calc(var(--pad) * 2);
-  white-space: nowrap;
+  padding: calc(var(--pad) * 2 + 96px) calc(var(--pad) * 2);
+  white-space: normal;
+  display: flex;
+  justify-content: flex-end;
 }
 @media (min-width: 1280px) {
   .info {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    padding: calc(var(--pad) * 2 + 125px) calc(var(--pad) * 2);
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 }
 
@@ -444,6 +439,7 @@ body.is-monospaced {
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  max-width: 600px;
   padding-bottom: 80px;
 }
 @media (min-width: 1280px) {
@@ -451,9 +447,10 @@ body.is-monospaced {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    width: 70%;
-    padding: calc(var(--pad) * 2);
-    align-content: center;
+    width: 75%;
+    max-width: 1000px;
+    align-content: start;
+    padding: 0;
   }
 }
 /* Removed absolute positioning for info_item */
