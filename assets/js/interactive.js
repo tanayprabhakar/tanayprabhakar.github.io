@@ -55,4 +55,67 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cursorTrail) cursorTrail.classList.remove("hover");
     });
   });
+
+  // Fetch LeetCode Stats
+  const fetchLeetCodeStats = async () => {
+    try {
+      const username = 'tanayprabhakar';
+      const [profileRes, solvedRes, skillsRes] = await Promise.all([
+        fetch(`https://alfa-leetcode-api.onrender.com/${username}`),
+        fetch(`https://alfa-leetcode-api.onrender.com/${username}/solved`),
+        fetch(`https://alfa-leetcode-api.onrender.com/skillStats/${username}`)
+      ]);
+      
+      const profileData = await profileRes.json();
+      const solvedData = await solvedRes.json();
+      const skillsData = await skillsRes.json();
+      
+      const loadingEl = document.getElementById('leetcode-loading');
+      const statsListEl = document.getElementById('leetcode-stats-list');
+      
+      if (loadingEl && statsListEl) {
+        loadingEl.style.display = 'none';
+        statsListEl.style.display = 'block';
+        
+        const totalEl = document.getElementById('lc-solved-total');
+        if (totalEl) totalEl.innerHTML = `<b>${solvedData.solvedProblem}</b> total solved`;
+        
+        const easyEl = document.getElementById('lc-easy');
+        if (easyEl) easyEl.innerText = `Easy: ${solvedData.easySolved}`;
+        
+        const mediumEl = document.getElementById('lc-medium');
+        if (mediumEl) mediumEl.innerText = `Med: ${solvedData.mediumSolved}`;
+        
+        const hardEl = document.getElementById('lc-hard');
+        if (hardEl) hardEl.innerText = `Hard: ${solvedData.hardSolved}`;
+        
+        const rankEl = document.getElementById('lc-rank');
+        if (rankEl && profileData.ranking) {
+           rankEl.innerText = `${profileData.ranking.toLocaleString()}`;
+        }
+        
+        let allTopics = [];
+        if (skillsData.matchedUser && skillsData.matchedUser.tagProblemCounts) {
+          const tags = skillsData.matchedUser.tagProblemCounts;
+          allTopics = [
+            ...(tags.advanced || []),
+            ...(tags.intermediate || []),
+            ...(tags.fundamental || [])
+          ];
+        }
+        
+        allTopics.sort((a, b) => b.problemsSolved - a.problemsSolved);
+        const topTopics = allTopics.slice(0, 8).map(t => t.tagName).join(', ');
+        
+        const topicsEl = document.getElementById('lc-topics');
+        if (topicsEl) topicsEl.innerText = topTopics;
+      }
+    } catch (error) {
+      console.error('Error fetching LeetCode stats:', error);
+      const loadingEl = document.getElementById('leetcode-loading');
+      if (loadingEl) loadingEl.innerText = 'Unable to load stats.';
+    }
+  };
+
+  fetchLeetCodeStats();
 });

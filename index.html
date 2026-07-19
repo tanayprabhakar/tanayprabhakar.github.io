@@ -226,9 +226,31 @@
                         <span class="is-light">UPES ACM (Former Vice-Chairperson)</span><br />
                         <span style="font-size: 0.9em;">Directed '100 Days of Code' initiative.</span>
                       </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="info_item" id="leetcode-stats-container">
+                  <div class="info_content">
+                    <h3 style="margin-bottom: 10px; font-weight: bold; color: var(--c-text);">LeetCode</h3>
+                    <div id="leetcode-loading" style="font-size: 0.9em; color: gray;">Fetching real-time stats...</div>
+                    <ul id="leetcode-stats-list" style="display: none;">
+                      <li>
+                        <span class="is-light">Questions Solved</span><br />
+                        <span style="font-size: 0.9em;" id="lc-solved-total"></span>
+                        <div style="font-size: 0.85em; margin-top: 3px; display: flex; gap: 10px; font-weight: bold;">
+                           <span style="color: #00b8a3;" id="lc-easy"></span>
+                           <span style="color: #ffc01e;" id="lc-medium"></span>
+                           <span style="color: #ef4743;" id="lc-hard"></span>
+                        </div>
+                      </li>
                       <li style="margin-top: 10px;">
-                        <span class="is-light">Algorithms</span><br />
-                        <span style="font-size: 0.9em;">LeetCode Global Rank: 423,921 (Top 10%)</span>
+                        <span class="is-light">Top Topics</span><br />
+                        <span style="font-size: 0.85em; line-height: 1.4;" id="lc-topics"></span>
+                      </li>
+                      <li style="margin-top: 10px;">
+                        <span class="is-light">Global Rank</span><br />
+                        <span style="font-size: 0.9em;" id="lc-rank"></span>
                       </li>
                     </ul>
                   </div>
