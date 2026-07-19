@@ -588,3 +588,132 @@ a, .theme_btn {
   background-color: color-mix(in srgb, var(--c-text) 20%, transparent) !important;
   box-shadow: 0 0 10px color-mix(in srgb, var(--c-text) 30%, transparent);
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  :root {
+    --pad: 10px;
+  }
+
+  /* Disable Custom Cursor & Hover Effects for Touch */
+  #custom-cursor, #custom-cursor-trail {
+    display: none !important;
+  }
+  body, a, .theme_btn {
+    cursor: auto !important;
+  }
+  .home_aboutme:hover, .project_item:hover, .info_item:hover, .contact_wrap:hover {
+    transform: translateZ(30px) !important;
+    border-color: color-mix(in srgb, var(--c-text) 15%, transparent) !important;
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--c-text) 10%, transparent), 0 0 15px color-mix(in srgb, var(--c-text) 5%, transparent) inset !important;
+  }
+
+  /* Adjust Header */
+  .siteHeader_title {
+    font-size: 28px !important;
+  }
+  .siteHeader_label {
+    font-size: 13px !important;
+  }
+  .siteHeader_nav {
+    margin-top: 25px !important;
+  }
+  .siteHeader_nav ol {
+    row-gap: 12px !important;
+  }
+
+  /* Adjust Theme Toggle */
+  .theme {
+    left: calc(var(--pad) * 2) !important;
+    bottom: calc(var(--pad) * 2) !important;
+    transform: none !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    width: calc(100% - var(--pad) * 4);
+    z-index: 100;
+  }
+
+  /* Home Page Adjustments */
+  .home {
+    position: absolute !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: calc(var(--pad) * 2) !important;
+    top: 250px !important;
+    white-space: normal !important;
+    width: calc(100% - var(--pad) * 4);
+  }
+  .home_aboutme {
+    padding: 20px !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+  .home_aboutme span {
+    display: inline !important;
+  }
+  .home_aboutme br {
+    display: none !important;
+  }
+
+  /* Projects Page Adjustments */
+  .project {
+    padding: 250px calc(var(--pad) * 2) 80px calc(var(--pad) * 2) !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+  .project_section + .project_section {
+    margin-top: 40px !important;
+  }
+  .project_list {
+    align-items: flex-start !important;
+    margin-top: 20px !important;
+  }
+  .project_item {
+    padding: 20px !important;
+    width: 100%;
+    flex-direction: column !important;
+  }
+  .project_title {
+    font-size: 22px !important;
+    text-align: left !important;
+    white-space: normal;
+  }
+  .project_info {
+    font-size: 13px !important;
+    white-space: normal;
+    margin-top: 8px !important;
+  }
+
+  /* Info Page Adjustments */
+  .info {
+    padding: 250px calc(var(--pad) * 2) 80px calc(var(--pad) * 2) !important;
+    justify-content: flex-start !important;
+  }
+  .info_grid {
+    max-width: 100% !important;
+    gap: 15px !important;
+  }
+  .info_item {
+    padding: 20px !important;
+  }
+
+  /* Contact Page Adjustments */
+  .contact {
+    position: absolute !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: calc(var(--pad) * 2) !important;
+    top: 250px !important;
+    white-space: normal !important;
+    width: calc(100% - var(--pad) * 4);
+  }
+  .contact_wrap {
+    padding: 20px !important;
+  }
+  .contact_text {
+    font-size: 14px !important;
+    white-space: normal;
+    word-break: break-all;
+  }
+}
