@@ -444,13 +444,18 @@ body.is-monospaced {
 }
 @media (min-width: 1280px) {
   .info_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    display: block;
+    column-count: 2;
+    column-gap: 30px;
     width: 75%;
     max-width: 1000px;
-    align-content: start;
     padding: 0;
+  }
+  .info_item {
+    break-inside: avoid-column;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
   }
 }
 /* Removed absolute positioning for info_item */
