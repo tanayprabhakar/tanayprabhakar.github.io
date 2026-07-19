@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         medium = fallbackData.mediumSolved;
         hard = fallbackData.hardSolved;
         rank = fallbackData.ranking;
-        topTopics = 'Array, Hash Table, Math, String, Dynamic Programming, Sorting, Two Pointers, Matrix';
+        topTopics = 'Data currently unavailable (Rate Limited)';
       }
       
       const loadingEl = document.getElementById('leetcode-loading');
