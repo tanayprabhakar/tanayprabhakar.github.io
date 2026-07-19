@@ -641,7 +641,7 @@ a, .theme_btn {
     right: auto !important;
     bottom: auto !important;
     left: calc(var(--pad) * 2) !important;
-    top: 250px !important;
+    top: 380px !important;
     white-space: normal !important;
     width: calc(100% - var(--pad) * 4);
   }
@@ -659,7 +659,7 @@ a, .theme_btn {
 
   /* Projects Page Adjustments */
   .project {
-    padding: 250px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
+    padding: 380px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
     text-align: left !important;
     white-space: normal !important;
   }
@@ -693,7 +693,7 @@ a, .theme_btn {
 
   /* Info Page Adjustments */
   .info {
-    padding: 250px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
+    padding: 380px calc(var(--pad) * 2) 150px calc(var(--pad) * 2) !important;
     justify-content: flex-start !important;
   }
   .info_grid {
@@ -713,7 +713,7 @@ a, .theme_btn {
     right: auto !important;
     bottom: auto !important;
     left: calc(var(--pad) * 2) !important;
-    top: 250px !important;
+    top: 380px !important;
     white-space: normal !important;
     width: calc(100% - var(--pad) * 4);
   }
