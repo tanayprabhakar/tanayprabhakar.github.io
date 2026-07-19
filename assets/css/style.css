@@ -487,3 +487,124 @@ body.is-monospaced {
   font-family: "Neue Montreal", "Hiragino Sans", Meiryo, sans-serif;
 }
 
+/* GAMIFIED 3D UI REDESIGN */
+
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+a, .theme_btn {
+  cursor: none;
+}
+
+/* Custom Cursor */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #0ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate3d(0, 0, 0);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+#custom-cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(0, 0, 0);
+  margin-left: -10px;
+  margin-top: -10px;
+  transition: width 0.2s, height 0.2s, border-color 0.2s, margin 0.2s;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3) inset;
+}
+
+#custom-cursor.hover {
+  width: 20px;
+  height: 20px;
+  background-color: #f0f;
+  box-shadow: 0 0 15px #f0f, 0 0 30px #f0f;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+#custom-cursor-trail.hover {
+  width: 50px;
+  height: 50px;
+  border-color: rgba(255, 0, 255, 0.8);
+  margin-left: -20px;
+  margin-top: -20px;
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.4) inset;
+}
+
+/* 3D Glassmorphism Cards */
+.page_content {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.home_aboutme, .project_item, .info_item, .contact_wrap {
+  background: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.2) inset;
+  transform: translateZ(30px);
+  transition: all 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  .home_aboutme, .project_item, .info_item, .contact_wrap {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 255, 255, 0.4) inset;
+  }
+}
+
+.home_aboutme:hover, .project_item:hover, .info_item:hover, .contact_wrap:hover {
+  border-color: rgba(255, 0, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 0, 255, 0.4) inset;
+  transform: translateZ(50px) scale(1.02);
+}
+
+/* Neon Text Effects */
+.siteHeader_title, .project_title {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.siteHeader_nav ol li.is-selected ._dot {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0.8; transform: scale(1); }
+}
+
+.text-btn:hover {
+  color: #f0f !important;
+  text-shadow: 0 0 10px #f0f;
+  opacity: 1 !important;
+}
+
+/* Frame Neon */
+.frame_line {
+  background-color: rgba(0, 255, 255, 0.5) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
