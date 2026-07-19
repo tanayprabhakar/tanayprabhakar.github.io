@@ -75,6 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalEl = document.getElementById('lc-solved-total');
         if (totalEl) totalEl.innerHTML = `<b>${data.solvedTotal}</b> total solved`;
         
+        const easyBar = document.getElementById('lc-bar-easy');
+        const mediumBar = document.getElementById('lc-bar-medium');
+        const hardBar = document.getElementById('lc-bar-hard');
+        
+        if (easyBar) easyBar.style.width = `${(data.easy / data.solvedTotal) * 100}%`;
+        if (mediumBar) mediumBar.style.width = `${(data.medium / data.solvedTotal) * 100}%`;
+        if (hardBar) hardBar.style.width = `${(data.hard / data.solvedTotal) * 100}%`;
+
         const easyEl = document.getElementById('lc-easy');
         if (easyEl) easyEl.innerText = `Easy: ${data.easy}`;
         
@@ -115,6 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalEl = document.getElementById('lc-solved-total');
         if (totalEl) totalEl.innerHTML = `<b>${fallbackData.solvedTotal}</b> total solved`;
         
+        const easyBar = document.getElementById('lc-bar-easy');
+        const mediumBar = document.getElementById('lc-bar-medium');
+        const hardBar = document.getElementById('lc-bar-hard');
+        
+        if (easyBar) easyBar.style.width = `${(fallbackData.easy / fallbackData.solvedTotal) * 100}%`;
+        if (mediumBar) mediumBar.style.width = `${(fallbackData.medium / fallbackData.solvedTotal) * 100}%`;
+        if (hardBar) hardBar.style.width = `${(fallbackData.hard / fallbackData.solvedTotal) * 100}%`;
+
         const easyEl = document.getElementById('lc-easy');
         if (easyEl) easyEl.innerText = `Easy: ${fallbackData.easy}`;
         
