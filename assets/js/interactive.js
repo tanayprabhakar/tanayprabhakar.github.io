@@ -93,9 +93,45 @@ document.addEventListener("DOMContentLoaded", () => {
         if (topicsEl) topicsEl.innerText = data.topTopics;
       }
     } catch (error) {
-      console.error('Error fetching LeetCode stats:', error);
+      console.warn('Error fetching LeetCode stats, using static fallback:', error);
+      
+      // Static fallback data for local file:// testing or if fetch fails
+      const fallbackData = {
+        solvedTotal: 331,
+        easy: 122,
+        medium: 161,
+        hard: 48,
+        rank: 418216,
+        topTopics: "Array, Hash Table, Math, String, Dynamic Programming, Sorting, Two Pointers, Matrix"
+      };
+
       const loadingEl = document.getElementById('leetcode-loading');
-      if (loadingEl) loadingEl.innerText = 'Unable to load stats.';
+      const statsListEl = document.getElementById('leetcode-stats-list');
+      
+      if (loadingEl && statsListEl) {
+        loadingEl.style.display = 'none';
+        statsListEl.style.display = 'block';
+        
+        const totalEl = document.getElementById('lc-solved-total');
+        if (totalEl) totalEl.innerHTML = `<b>${fallbackData.solvedTotal}</b> total solved`;
+        
+        const easyEl = document.getElementById('lc-easy');
+        if (easyEl) easyEl.innerText = `Easy: ${fallbackData.easy}`;
+        
+        const mediumEl = document.getElementById('lc-medium');
+        if (mediumEl) mediumEl.innerText = `Med: ${fallbackData.medium}`;
+        
+        const hardEl = document.getElementById('lc-hard');
+        if (hardEl) hardEl.innerText = `Hard: ${fallbackData.hard}`;
+        
+        const rankEl = document.getElementById('lc-rank');
+        if (rankEl) {
+           rankEl.innerText = `${fallbackData.rank.toLocaleString()}`;
+        }
+        
+        const topicsEl = document.getElementById('lc-topics');
+        if (topicsEl) topicsEl.innerText = fallbackData.topTopics;
+      }
     }
   };
 
