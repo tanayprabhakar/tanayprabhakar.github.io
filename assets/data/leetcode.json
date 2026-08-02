@@ -1,8 +1,8 @@
 {
-  "solvedTotal": 367,
+  "solvedTotal": 368,
   "easy": 135,
-  "medium": 180,
+  "medium": 181,
   "hard": 52,
   "rank": 355271,
-  "topTopics": "Array, Hash Table, String, Math, Dynamic Programming, Sorting, Two Pointers, Tree"
+  "topTopics": "Array, Hash Table, Math, String, Dynamic Programming, Sorting, Two Pointers, Tree"
 }
