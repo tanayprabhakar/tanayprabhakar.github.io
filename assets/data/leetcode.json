@@ -1,8 +1,8 @@
 {
-  "solvedTotal": 383,
+  "solvedTotal": 384,
   "easy": 139,
-  "medium": 188,
+  "medium": 189,
   "hard": 56,
   "rank": 333852,
-  "topTopics": "Array, Hash Table, Math, String, Dynamic Programming, Sorting, Greedy, Two Pointers"
+  "topTopics": "Array, Math, Hash Table, String, Dynamic Programming, Sorting, Greedy, Two Pointers"
 }
